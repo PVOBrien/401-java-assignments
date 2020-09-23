@@ -5,35 +5,21 @@ package inheritance;
 
 import java.util.ArrayList;
 
-public class Restaurant {
+public class Restaurant extends Business {
 
-    String name;
-    int stars;
     int priceCategory;
-    ArrayList<Review> reviewList = new ArrayList<>();
 
-    public Restaurant(String name, int stars, int priceCategory) {
-        this.name = name;
-        this.stars = stars;
+    public Restaurant(String name, String description, int rating, int priceCategory) {
+        super(name, description, rating);
         this.priceCategory = priceCategory;
     }
 
-    public String toString() {
-        return String.format("Name: %s Stars: %d Price Category: %d", name, stars, priceCategory);
+    public int getPriceCategory() {
+        return priceCategory;
     }
 
-    public void addReview(Review reviewToAdd) {
-        reviewList.add(reviewToAdd);
-        updateStarRating();
+    public void setPriceCategory(int priceCategory) {
+        this.priceCategory = priceCategory;
     }
 
-    public void updateStarRating(){
-        int total = 0;
-        for (int i = 0; i < reviewList.size(); i++) {
-            total += reviewList.get(i).stars;
-        }
-        stars = total / reviewList.size();
-    }
 }
-
-

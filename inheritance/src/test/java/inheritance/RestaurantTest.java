@@ -8,21 +8,22 @@ import static org.junit.Assert.*;
 
 public class RestaurantTest {
     @Test public void testRestaurantConstructor() {
-        Restaurant newRestaurant = new Restaurant("Serafina", 4, 3);
-        assertEquals("Name should be Serafina", "Serafina", newRestaurant.name);
+        Restaurant newRestaurant = new Restaurant("Serafina", "a beautiful place",4, 3);
+        assertEquals("Name should be Serafina", "Serafina", newRestaurant.getName());
     }
 
     @Test public void testRestaurantString() {
-        Restaurant newRestaurant = new Restaurant("Serafina", 4, 3);
-        assertEquals("Here's the toString result.", "Name: Serafina Stars: 4 Price Category: 3", newRestaurant.toString());
+        Restaurant newRestaurant = new Restaurant("Serafina", "wondrous!", 4, 3);
+        assertEquals("Here's the toString result.", "Business Description\nName: Serafina\nBusiness Description: wondrous!\nBusiness Rating: 4", newRestaurant.toString());
     }
 
     @Test public void testRestaurantReviewAdd() {
-        Review newReview = new Review("Serafina", 4, 3, "A fantastic place to eat! \nThe very best!", "Paul O'Brien");
-        Review secondReview = new Review("Serafina", 1, 3, "A fantastic place to eat! \nThe very best!", "Paul O'Brien");
-        Restaurant newRestaurant = new Restaurant("Serafina", 4, 3);
+        Review newReview = new Review("Serafina", "Paul O'Brien", 3);
+        Review secondReview = new Review("Serafina", "Paul O'Brien", 1);
+        Restaurant newRestaurant = new Restaurant("Serafina", "A wondrous place.", 2, 3);
         newRestaurant.addReview(newReview);
         newRestaurant.addReview(secondReview);
-        assertEquals("Average reviews should be 2.", 2, newRestaurant.stars);
+        assertEquals("Average reviews should be 2.", 2, newRestaurant.getRating());
+        assertEquals("this is the body", "Paul O'Brien", newRestaurant.reviewList.get(0).author);
     }
 }

@@ -6,12 +6,12 @@ import static org.junit.Assert.assertEquals;
 
 public class ReviewTest {
   @Test public void testReviewConstructor() {
-    Review newReview = new Review("Serafina", 4, 3, "A fantastic place to eat! \nThe very best!", "Paul O'Brien");
-    assertEquals("Body should be", "A fantastic place to eat! \nThe very best!", newReview.body);
+    Review newReview = new Review("Serafina", "Paul O'Brien",3);
+    assertEquals("Here are it's stars", 3, newReview.stars);
   }
 
   @Test public void testReviewString(){
-    Review newReview = new Review("Serafina", 4, 3, "A fantastic place to eat! \nThe very best!", "Paul O'Brien");
-    assertEquals("This is the Review.", "Review of: Serafina By Author: Paul O'Brien \nBody: \nA fantastic place to eat! \nThe very best!", newReview.toString());
+    Review newReview = new Review("Serafina", "Paul O'Brien",1);
+    assertEquals("This is the name of the restaurant:", "Paul O'Brien", newReview.author);
   }
 }
