@@ -64,6 +64,5 @@ public class TheaterTest {
 
     assertNotNull("Here are movies and theater review", alamo.reviewList);
     assertNotNull("Here are movies and theater review", (TheaterReview) alamo.reviewList.get(1)); // TODO how to get to movie?
-
   }
 }
