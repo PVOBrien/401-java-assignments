@@ -24,6 +24,6 @@ public class RestaurantTest {
         newRestaurant.addReview(newReview);
         newRestaurant.addReview(secondReview);
         assertEquals("Average reviews should be 2.", 2, newRestaurant.getRating());
-        assertEquals("this is the body", "Paul O'Brien", newRestaurant.restaurantReviewList.get(0).author);
+        assertEquals("this is the body", "Paul O'Brien", newRestaurant.reviewList.get(0).author);
     }
 }

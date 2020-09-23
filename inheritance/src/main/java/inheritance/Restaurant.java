@@ -14,8 +14,6 @@ public class Restaurant extends Business {
         this.priceCategory = priceCategory;
     }
 
-    ArrayList<Review> restaurantReviewList = new ArrayList<>();
-
     public int getPriceCategory() {
         return priceCategory;
     }
@@ -24,17 +22,4 @@ public class Restaurant extends Business {
         this.priceCategory = priceCategory;
     }
 
-    public void addReview(Review reviewToAdd) {
-        restaurantReviewList.add(reviewToAdd);
-        updateStarRating();
-    }
-
-    public void updateStarRating(){
-        int total = 0;
-        for (int i = 0; i < restaurantReviewList.size(); i++) {
-            total += restaurantReviewList.get(i).stars;
-        }
-        int newStars = total / restaurantReviewList.size(); // is this zero based? thinking about "off by one"
-        this.setRating(newStars);
-    }
 }

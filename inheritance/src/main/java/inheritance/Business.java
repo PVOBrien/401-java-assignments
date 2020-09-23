@@ -1,5 +1,7 @@
 package inheritance;
 
+import java.util.ArrayList;
+
 public class Business { // the analog to "Shop"
 
   private String name;
@@ -10,6 +12,22 @@ public class Business { // the analog to "Shop"
     this.name = name;
     this.description = description;
     this.rating = rating;
+  }
+
+  ArrayList<Review> reviewList = new ArrayList<>();
+
+  public void addReview(Review reviewToAdd) {
+    reviewList.add(reviewToAdd);
+    updateStarRating();
+  }
+
+  public void updateStarRating(){
+    int total = 0;
+    for (Review review : reviewList) {
+      total += review.stars;
+    }
+    int newStars = total / reviewList.size(); // is this zero based? thinking about "off by one"
+    this.setRating(newStars);
   }
 
   public String getName() {
