@@ -1,5 +1,6 @@
 package basiclibrary;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class LowestAverage {
@@ -15,6 +16,7 @@ public class LowestAverage {
         theLowestOfTheLow = theAverage.averageFinder(toAverageAgainst[i]);
       }
     }
+    System.out.println(Arrays.toString(toAverageAgainst[indexOfLowest]));
     return toAverageAgainst[indexOfLowest];
   }
 }
