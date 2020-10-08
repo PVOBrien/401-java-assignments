@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Roll {
 
-  public double[] diceRoll(int numberOfRolls) {
+  public int[] diceRoll(int numberOfRolls) {
     double[] rollArray = new double[numberOfRolls];
     for (int i = 0; i < numberOfRolls; i++) {
       double aNumber = Math.random() * 6; // https://www.javatpoint.com/java-math-random-method so says.

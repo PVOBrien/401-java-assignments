@@ -4,6 +4,8 @@
 package basiclibrary;
 
 import org.junit.Test;
+
+import static basiclibrary.Averages.averageFinder;
 import static org.junit.Assert.*;
 import java.util.List;
 import java.util.ArrayList;
@@ -13,8 +15,8 @@ public class BasicLibraryTest {
     @Test
     public void rollSomeDice() {
         Roll roll = new Roll();
-        int timesToRoll = 124;
-        double[] finalRoll = roll.diceRoll(timesToRoll);
+        int timesToRoll = 10;
+        int[] finalRoll = roll.diceRoll(timesToRoll);
         assertEquals(finalRoll.length, timesToRoll);
 
         boolean diceNumber = false;
@@ -35,7 +37,7 @@ public class BasicLibraryTest {
         DuplicateFinder findTheDuples = new DuplicateFinder();
         Roll roll = new Roll();
         int numberOfDupleChances = 20;
-        double[] dupleRoller = roll.diceRoll(numberOfDupleChances);
+        int[] dupleRoller = roll.diceRoll(numberOfDupleChances);
         boolean testTrue = findTheDuples.duplicatePresent(dupleRoller);
 
         assertTrue(testTrue);
@@ -43,25 +45,29 @@ public class BasicLibraryTest {
 
     @Test
     public void Averages() {
-        Roll roll = new Roll();
-        Averages thisAverage = new Averages();
-        double[] averageToFind = roll.diceRoll(10000);
-        double min = 0;
-        double max = 6;
-        double numberAverage = (max - min) / 2;
+//        Roll roll = new Roll();
+//        Averages thisAverage = new Averages();
+//        double[] averageToFind = roll.diceRoll(10000);
+//        double min = 0;
+//        double max = 6;
+//        double numberAverage = (max - min) / 2;
+//
+//        double averageToTest = thisAverage.averageFinder(averageToFind);
+//        boolean correctAverage;
+//
+//        if (averageToTest > numberAverage - 1 && averageToTest < numberAverage + 1) {
+//            correctAverage = true;
+//        } else {
+//            correctAverage = false;
+//        }
+//
+//        System.out.println(numberAverage);
+//        System.out.println(averageToTest);
+//        assertTrue("it is within the average", correctAverage);
 
-        double averageToTest = thisAverage.averageFinder(averageToFind);
-        boolean correctAverage;
-
-        if (averageToTest > numberAverage - 1 && averageToTest < numberAverage + 1) {
-            correctAverage = true;
-        } else {
-            correctAverage = false;
-        }
-
-        System.out.println(numberAverage);
-        System.out.println(averageToTest);
-        assertTrue("it is within the average", correctAverage);
+        double [] testArray = new double[] {1,2,3,4,5};
+//        assertEquals(3, averageFinder(testArray));
+        assertEquals(3, averageFinder(testArray), 1);
     }
 
     @Test

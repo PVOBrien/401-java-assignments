@@ -1,7 +1,7 @@
 package basiclibrary;
 
 public class DuplicateFinder {
-  public boolean duplicatePresent(double[] toCheckAgainst) {
+  public boolean duplicatePresent(int[] toCheckAgainst) {
     boolean isThereADuple = false;
 
     for (int i = 0; i < toCheckAgainst.length; i++) {
@@ -12,6 +12,7 @@ public class DuplicateFinder {
           break;
         }
     }
+    System.out.println(isThereADuple);
     return isThereADuple;
   }
 }
