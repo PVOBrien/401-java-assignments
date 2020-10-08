@@ -1,17 +1,18 @@
 package basiclibrary;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Roll {
 
-  public double[] diceRoll(int numberOfRolls) {
-    double[] rollArray = new double[numberOfRolls];
+  public ArrayList diceRoll(int numberOfRolls) {
+    ArrayList<Integer> rollArray = new ArrayList<>();
     for (int i = 0; i < numberOfRolls; i++) {
-      double aNumber = Math.random() * 6; // https://www.javatpoint.com/java-math-random-method so says.
-      aNumber = Math.ceil(aNumber);
-      rollArray[i] = aNumber;
+      int aNumber = (int) (Math.random() * 6); // https://www.javatpoint.com/java-math-random-method so says.
+      aNumber = (int) Math.ceil(aNumber);
+      rollArray.set(i, aNumber);
     }
-    System.out.println(Arrays.toString(rollArray));
+    System.out.println(rollArray.toString());
     return rollArray;
   }
 }

@@ -1,11 +1,14 @@
 package basiclibrary;
 
+import java.util.ArrayList;
+
 public class Averages {
-  public double averageFinder(double[] averagePool) {
-    double total = 0;
-    for (int i = 0; i < averagePool.length; i++) {
-      total += averagePool[i];
+  public double averageFinder(ArrayList averagePool) {
+    int total = 0;
+    for (int i = 0; i < (int) averagePool.get(i); i++) {
+      total += (int) averagePool.get(i);
     }
-    return total / averagePool.length;
+    System.out.println(total / averagePool.size());
+    return total / averagePool.size();
   }
 }

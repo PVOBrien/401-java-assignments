@@ -13,14 +13,14 @@ public class BasicLibraryTest {
     @Test
     public void rollSomeDice() {
         Roll roll = new Roll();
-        int timesToRoll = 124;
-        double[] finalRoll = roll.diceRoll(timesToRoll);
-        assertEquals(finalRoll.length, timesToRoll);
+        int timesToRoll = 10;
+        ArrayList finalRoll = roll.diceRoll(timesToRoll);
+        assertEquals(finalRoll.size(), timesToRoll);
 
         boolean diceNumber = false;
 
         for (int i = 0; i < timesToRoll; i++) { // created w help from Claudio Bailon-Schubert
-            if (finalRoll[i] > 0 && finalRoll[i] < 7) {
+            if ((int) finalRoll.get(i) > 0 && (int) finalRoll.get(i) < 7) {
                 diceNumber = true;
             } else {
                 diceNumber = false;
@@ -35,7 +35,7 @@ public class BasicLibraryTest {
         DuplicateFinder findTheDuples = new DuplicateFinder();
         Roll roll = new Roll();
         int numberOfDupleChances = 20;
-        double[] dupleRoller = roll.diceRoll(numberOfDupleChances);
+        ArrayList dupleRoller = roll.diceRoll(numberOfDupleChances);
         boolean testTrue = findTheDuples.duplicatePresent(dupleRoller);
 
         assertTrue(testTrue);
@@ -45,7 +45,7 @@ public class BasicLibraryTest {
     public void Averages() {
         Roll roll = new Roll();
         Averages thisAverage = new Averages();
-        double[] averageToFind = roll.diceRoll(10000);
+        ArrayList averageToFind = roll.diceRoll(10000);
         double min = 0;
         double max = 6;
         double numberAverage = (max - min) / 2;
@@ -66,17 +66,17 @@ public class BasicLibraryTest {
 
     @Test
     public void LowestAverage() {
-        double[][] weeklyMonthTemperatures = {
-          {66.0, 64.0, 58.0, 65.0, 71.0, 57.0, 60.0},
-          {57.0, 65.0, 65.0, 70.0, 72.0, 65.0, 51.0},
-          {5.0, 4.0, 6.0, 3.0, 9.0, 7.0, 1.0},
-          {65.0, 56.0, 55.0, 52.0, 55.0, 62.0, 57.0}
+        int[][] weeklyMonthTemperatures = {
+          {66, 64, 58, 65, 71, 57, 60},
+          {57, 65, 65, 70, 72, 65, 51},
+          {5, 4, 6, 3, 9, 7, 1},
+          {65, 56, 55, 52, 55, 62, 57}
         };
 
-        LowestAverage lowlow = new LowestAverage();
-        double[] testlowAverage = {5.0, 4.0, 6.0, 3.0, 9.0, 7.0, 1.0};
-        lowlow.lowAverage(weeklyMonthTemperatures);
-        assertArrayEquals(testlowAverage, lowlow.lowAverage(weeklyMonthTemperatures), 0);
+        LowestAverage lowLow = new LowestAverage();
+        int[] testLowAverage = {5, 4, 6, 3, 9, 7, 1};
+        int[] toTest = lowLow.lowAverage(weeklyMonthTemperatures);
+        assertArrayEquals(testLowAverage, toTest);
     }
 
     @Test public void missingTemp () {
