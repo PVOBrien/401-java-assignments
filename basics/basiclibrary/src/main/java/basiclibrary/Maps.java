@@ -24,7 +24,7 @@ public class Maps {
       if (bananaTemp > highTemp) {
         highTemp = bananaTemp;
       }
-      System.out.println(bananaTemp);
+//      System.out.println(bananaTemp);
     }
 
     String returnString = "High: " + highTemp + "\nLow: " + lowTemp;
@@ -58,8 +58,8 @@ public class Maps {
         if (votes.get(voteTotal) > count) {
           winner = voteTotal;
         }
-        System.out.println(voteTotal);
-        System.out.println(votes.get(voteTotal));
+//        System.out.println(voteTotal);
+//        System.out.println(votes.get(voteTotal));
       }
 
     String toTheWinner = (winner + " received the most votes!");

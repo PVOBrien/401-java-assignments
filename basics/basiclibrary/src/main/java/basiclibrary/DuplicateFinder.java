@@ -5,14 +5,14 @@ public class DuplicateFinder {
     boolean isThereADuple = false;
 
     for (int i = 0; i < toCheckAgainst.length; i++) {
-      double currentCheck = toCheckAgainst[i];
+      int currentCheck = toCheckAgainst[i];
       for (int j = i+1; j < toCheckAgainst.length; j++)
         if (currentCheck == toCheckAgainst[j]) {
           isThereADuple = true;
           break;
         }
     }
-    System.out.println(isThereADuple);
+    System.out.println("Are there duplicates? " + isThereADuple);
     return isThereADuple;
   }
 }
