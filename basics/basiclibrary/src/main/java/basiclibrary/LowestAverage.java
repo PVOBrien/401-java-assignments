@@ -4,19 +4,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class LowestAverage {
-  public double[] lowAverage(double[][] toAverageAgainst) {
+  public int[] lowAverage(int[][] toAverageAgainst) {
     Averages theAverage = new Averages();
     int indexOfLowest = 0;
-    double theLowestOfTheLow = theAverage.averageFinder(toAverageAgainst[0]);
+    int theLowestOfTheLow = (int) theAverage.averageFinder(toAverageAgainst[0]);
 
-    for (int i = 1; i < toAverageAgainst.length; i++) {
-      System.out.println(Arrays.toString(toAverageAgainst[i]));
+    for (int i = 0; i < toAverageAgainst.length; i++) {
       if (theAverage.averageFinder(toAverageAgainst[i]) < theLowestOfTheLow) {
         indexOfLowest = i;
-        theLowestOfTheLow = theAverage.averageFinder(toAverageAgainst[i]);
+        theLowestOfTheLow = (int) theAverage.averageFinder(toAverageAgainst[i]);
       }
     }
-    System.out.println(Arrays.toString(toAverageAgainst[indexOfLowest]));
+    System.out.println("Here're those averages, Dale. " + Arrays.toString(toAverageAgainst[indexOfLowest]));
     return toAverageAgainst[indexOfLowest];
   }
 }
