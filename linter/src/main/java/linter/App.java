@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         App app = new App();
-        app.linterWorker();
+        app.linterWorker(args[0]);
     }
 
     public String linterWorker() {
